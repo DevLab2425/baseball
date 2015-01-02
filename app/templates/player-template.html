@@ -1,43 +1,45 @@
 <div class="row">
-	<div class="col-lg-2 text-center">
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text-center">
 		<img ng-src="{{player.image}}" alt="{{player.name}} MLB Photo" class="img-thumbnail" />
 	</div>
-	<div class="col-lg-10">
+	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 		<h2>{{player.name}}</h2>
-		<table class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<th>Game</th>
-					<th>Opp</th>
-					<th>AB</th>
-					<th>Hits</th>
-					<th>HR</th>
-					<th>RBI</th>
-					<th>AVG</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="game in player.games">
-					<td>{{$index + 1}}</td>
-					<td>{{game.opp}}</td>
-					<td>{{game.AB}}</td>
-					<td>{{game.H}}</td>
-					<td>{{game.HR}}</td>
-					<td>{{game.RBI}}</td>
-					<td>{{ (game.H / game.AB) || '.000' }}</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td>Totals</td>
-					<td></td>
-					<td>{{totals.AB}}</td>
-					<td>{{totals.H}}</td>
-					<td>{{totals.HR}}</td>
-					<td>{{totals.RBI}}</td>
-					<td>{{totals.AVG}}</td>
-				</tr>
-			</tfoot>
-		</table>
+		<div class="table-responsive">
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Game</th>
+						<th>Opp</th>
+						<th>AB</th>
+						<th>Hits</th>
+						<th>HR</th>
+						<th>RBI</th>
+						<th>AVG</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="game in player.games">
+						<td>{{$index + 1}}</td>
+						<td>{{game.opp}}</td>
+						<td>{{game.AB}}</td>
+						<td>{{game.H}}</td>
+						<td>{{game.HR}}</td>
+						<td>{{game.RBI}}</td>
+						<td>{{ (game.H / game.AB) || '.000' | number:3}}</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>Totals</td>
+						<td>&mdash;</td>
+						<td>{{totals.AB}}</td>
+						<td>{{totals.H}}</td>
+						<td>{{totals.HR}}</td>
+						<td>{{totals.RBI}}</td>
+						<td>{{totals.AVG | number:3}}</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
 	</div>
 </div>

@@ -1,0 +1,20 @@
+{
+  "name": "tm-project",
+  "version": "0.0.1",
+  "description": "A small coding project to display baseball player stats",
+  "main": "app/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github_dl2425:DevLab2425/baseball.git"
+  },
+  "author": "Paul Barry <devlab2425@gmail.com> (https://github.com/DevLab2425/angular-simple-slideshow)",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "main-bower-files": "^2.4.1",
+    "gulp-inject": "^1.1.1"
+  }
+}

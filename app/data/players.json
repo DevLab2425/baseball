@@ -1,14 +1,17 @@
 [
 	{
 		"id": 452655,
-		"name": "Denard Span"
+		"name": "Denard Span",
+		"image": "http://mlb.mlb.com/images/players/mugshot/ph_452655.jpg"
 	},
 	{
 		"id": 457706,
-		"name": "Austin Jackson"
+		"name": "Austin Jackson",
+		"image": "http://mlb.mlb.com/images/players/mugshot/ph_457706.jpg"
 	},
 	{
 		"id": 502082,
-		"name": "Lonnie Chisenhall"
+		"name": "Lonnie Chisenhall",
+		"image": "http://mlb.mlb.com/images/players/mugshot/ph_502082.jpg"
 	}
 ]

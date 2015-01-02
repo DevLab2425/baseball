@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-lg-4" ng-repeat="player in players">
+		<div class="thumbnail">
+			<img ng-src="{{player.image}}" alt="{{player.name}}" />
+			<div class="caption">
+				<h3>{{player.name}}</h3>
+				<p class="text-right">
+					<button type="button" class="btn btn-primary" ng-click="details(player)">Details</button>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

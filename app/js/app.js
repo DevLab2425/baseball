@@ -5,14 +5,22 @@
 		.config(['$routeProvider', function($routeProvider){
 			
 			$routeProvider
+				.when('/', {
+					url: '/',
+					templateUrl: 'templates/main-template.html',
+					controller: 'MainController'
+				})
 				.when('/players/:playerId', {
 					url: '/players/:playerId',
 					templateUrl: 'templates/player-template.html',
 					controller: 'PlayerController'
 				})
+				.otherwise({
+					redirectTo:'/'
+				})
 		}])
 	
-		.controller('MainController', ['$scope', '$http', function($scope, $http){
+		.controller('MainController', ['$scope', '$http', '$location', function($scope, $http, $location){
 			$scope.players = [];
 			$http.get('data/players.json')
 				.success(function(players){
@@ -24,6 +32,10 @@
 					// throw error
 					throw new Error(err);
 				});
+				
+			$scope.details = function(player){
+				$location.url('/players/' + player.id);
+			}
 		}])
 		
 		.controller('PlayerController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){

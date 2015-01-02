@@ -1,0 +1,23 @@
+{
+  "name": "tm-project",
+  "version": "0.0.1",
+  "authors": [
+    "Paul Barry <devlab2425@gmail.com>"
+  ],
+  "description": "A small coding project to display baseball player stats",
+  "main": "app/index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.8",
+    "angular-route": "~1.3.8",
+    "bootstrap-css-only": "~3.3.1"
+  }
+}
