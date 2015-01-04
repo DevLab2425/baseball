@@ -2,16 +2,19 @@
 	{
 		"id": 452655,
 		"name": "Denard Span",
-		"image": "http://mlb.mlb.com/images/players/mugshot/ph_452655.jpg"
+		"image": "http://mlb.mlb.com/images/players/mugshot/ph_452655.jpg",
+		"teamImage": "http://www.indepthbaseball.com/video/dr/idsmlb/images/mlbteams/WSH.png"
 	},
 	{
 		"id": 457706,
 		"name": "Austin Jackson",
-		"image": "http://mlb.mlb.com/images/players/mugshot/ph_457706.jpg"
+		"image": "http://mlb.mlb.com/images/players/mugshot/ph_457706.jpg",
+		"teamImage": "http://www.indepthbaseball.com/video/dr/idsmlb/images/mlbteams/DET.png"
 	},
 	{
 		"id": 502082,
 		"name": "Lonnie Chisenhall",
-		"image": "http://mlb.mlb.com/images/players/mugshot/ph_502082.jpg"
+		"image": "http://mlb.mlb.com/images/players/mugshot/ph_502082.jpg",
+		"teamImage": "http://www.indepthbaseball.com/video/dr/idsmlb/images/mlbteams/CLE.png"
 	}
 ]
