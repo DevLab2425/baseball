@@ -1,6 +1,6 @@
 (function(angular){
 	
-	angular.module('TruMedia', ['ngRoute'])
+	angular.module('Baseball', ['ngRoute'])
 	
 		.config(['$routeProvider', function($routeProvider){
 			
@@ -20,7 +20,7 @@
 				})
 		}])
 	
-		.controller('MainController', ['$scope', '$http', '$location', function($scope, $http, $location){
+		.controller('BaseballController', ['$scope', '$http', '$location', function($scope, $http, $location){
 			$scope.players = [];
 			$http.get('data/players.json')
 				.success(function(players){
@@ -52,7 +52,6 @@
 			
 			$http.get('data/' + playerId + '.json')
 				.success(function(playerData){
-					console.log(playerData);
 					$scope.player = playerData;
 					totalStats();
 				})
