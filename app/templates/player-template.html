@@ -15,23 +15,35 @@
 		</div>
 		
 		<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-			<h2>{{player.name}}</h2>
+			<div class="row">
+				<div class="col-lg-6">
+					<h2>{{player.name}}</h2>
+				</div>
+				<div class="col-lg-6">
+					<label for="opponentFilter">
+						Opponent:
+						<input id="opponentFilter" type="search" ng-model="filter.opp" />
+					</label>
+				</div>
+			</div>
+			
 			<div class="table-responsive">
-				<table class="table table-striped table-hover">
+				<table class="table table-striped table-hover table-condensed">
+					<caption>Games: {{filteredGames.length}}</caption>
 					<thead>
 						<tr>
-							<th>Game</th>
-							<th>Opp</th>
-							<th>AB</th>
-							<th>Hits</th>
-							<th>HR</th>
-							<th>RBI</th>
+							<th><a href ng-click="sort('date')">Date&nbsp;<i ng-class="{'glyphicon-chevron-down' : sort.column == 'date', 'glyphicon-chevron-up' : sort.column == '-date'}" class="glyphicon"></i></a></th>
+							<th><a href ng-click="sort('opp')">Opp&nbsp;<i ng-class="{'glyphicon-chevron-down' : sort.column == 'opp', 'glyphicon-chevron-up' : sort.column == '-opp'}" class="glyphicon"></i></a></th>
+							<th><a href ng-click="sort('AB')">AB&nbsp;<i ng-class="{'glyphicon-chevron-down' : sort.column == 'AB', 'glyphicon-chevron-up' : sort.column == '-AB'}" class="glyphicon"></i></a></th>
+							<th><a href ng-click="sort('H')">Hits&nbsp;<i ng-class="{'glyphicon-chevron-down' : sort.column == 'H', 'glyphicon-chevron-up' : sort.column == '-H'}" class="glyphicon"></i></a></th>
+							<th><a href ng-click="sort('HR')">HR&nbsp;<i ng-class="{'glyphicon-chevron-down' : sort.column == 'HR', 'glyphicon-chevron-up' : sort.column == '-HR'}" class="glyphicon"></i></a></th>
+							<th><a href ng-click="sort('RBI')">RBI&nbsp;<i ng-class="{'glyphicon-chevron-down' : sort.column == 'RBI', 'glyphicon-chevron-up' : sort.column == '-RBI'}" class="glyphicon"></i></a></th>
 							<th>AVG</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="game in player.games">
-							<td>{{$index + 1}}</td>
+						<tr ng-repeat="game in filteredGames = (player.games | filter:filter.opp | orderBy: sort.column)">
+							<td>{{game.date | date:'MMM d, yyyy'}}</td>
 							<td>{{game.opp}}</td>
 							<td>{{game.AB}}</td>
 							<td>{{game.H}}</td>
@@ -39,10 +51,17 @@
 							<td>{{game.RBI}}</td>
 							<td>{{ (game.H / game.AB) || '.000' | number:3}}</td>
 						</tr>
+						<tr ng-show="filteredGames.length == 0">
+							<td colspan="7">
+								<p class="alert alert-info">
+									<strong>Sorry!</strong> There are no opponents with that name.
+								</p>
+							</td>
+						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
-							<td>Totals</td>
+							<td><span ng-show="filter.opp">Opponent&nbsp;</span>Totals</td>
 							<td>&mdash;</td>
 							<td>{{totals.AB}}</td>
 							<td>{{totals.H}}</td>

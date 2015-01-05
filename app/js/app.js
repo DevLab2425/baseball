@@ -1,6 +1,6 @@
 (function(angular){
 	
-	angular.module('Baseball', ['ui.router'])
+	angular.module('Baseball', ['ui.router', 'ui.bootstrap'])
 	
 		.config(['$stateProvider', function($stateProvider){
 			$stateProvider
