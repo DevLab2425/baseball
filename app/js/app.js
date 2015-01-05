@@ -2,20 +2,22 @@
 	
 	angular.module('Baseball', ['ui.router', 'ui.bootstrap'])
 	
-		.config(['$stateProvider', function($stateProvider){
-			$stateProvider
+		.config(['$stateProvider', '$urlRouterProvider',
+			function($stateProvider, $urlRouterProvider){
+				$urlRouterProvider.otherwise('/');
 				
-				.state('home',{
-					url: '/',
-					templateUrl: 'templates/main-template.html',
-					controller: 'BaseballController',
-				})
-				
-				.state('player', {
-					url: '/players/:playerId',
-					templateUrl: 'templates/player-template.html',
-					controller: 'PlayerController'
-				});
+				$stateProvider
+					.state('home',{
+						url: '/',
+						templateUrl: 'templates/main-template.html',
+						controller: 'BaseballController',
+					})
+					
+					.state('player', {
+						url: '/players/:playerId',
+						templateUrl: 'templates/player-template.html',
+						controller: 'PlayerController'
+					});
 
 			// $routeProvider
 			// 	.when('/', {

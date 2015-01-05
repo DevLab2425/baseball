@@ -4,7 +4,7 @@
 	angular.module('Baseball')
 
 		.controller('BaseballController', ['$scope', '$http', '$state', 
-			function($scope, $http, $location){
+			function($scope, $http, $location, $state){
 				$scope.players = [];
 				$http.get('data/players.json')
 					.success(function(players){

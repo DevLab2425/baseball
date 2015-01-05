@@ -1,7 +1,7 @@
 #Baseball code exercise
 
 ## Project Details
-This project includes files created to display the data of three baseball players over the course of a 162-game season. 
+This client-side project which includes files created to display the data of three baseball players over the course of a 162-game season. The application files must be hosted on a webserver and can not be launched directly with a browser.
 
 The project utilizes the following:
 
@@ -15,5 +15,7 @@ The application is created using AngularJS for functionality and Twitter Bootstr
 ## Usage
 To use the application, follow the steps below.
 
-* Clone this repo
-* In a terminal, run `npm install` and `bower install`
+* Clone this repo to a web server location (localhost is fine)
+* In a terminal, `cd` into the project directory and run `npm install`, followed by `bower install`
+* When the installs complete, run `gulp index` to inject the dependencies into `index.html`
+* Open the `index.html` from a web browser.
